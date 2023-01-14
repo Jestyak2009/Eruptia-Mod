@@ -47,7 +47,10 @@ public class SussyBlocks{
     
     public static void load(){
         SussyWall = new Wall("SussyWall"){{
-            requirements(Category.defense, with(Items.copper, 55));
+            requirements(Category.crafting, ItemStack.with(
+                    Items.titanium, 60,
+                    Items.silicon, 150
+            ));
             health = 5555;
             armor = 3f;
             buildCostMultiplier = 8f;
