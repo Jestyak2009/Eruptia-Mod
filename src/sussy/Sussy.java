@@ -31,6 +31,7 @@ public class Sussy extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading some sussy content.");
+    SussyBlocks.load();
     }
 
 }
