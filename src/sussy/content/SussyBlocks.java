@@ -43,8 +43,7 @@ public class SussyBlocks{
     public static Block
     
     //defense
-    SussyWall, SussyWallLarge,
-    ;
+    SussyWall;
     
     public static void load(){
         SussyWall = new Wall("SussyWall"){{
@@ -52,14 +51,6 @@ public class SussyBlocks{
             health = 450 * wallHealthMultiplier;
             armor = 3f;
             buildCostMultiplier = 8f;
-        }};
-      
-        SussyWallLarge = new Wall("SussyWallLarge"){{
-            requirements(Category.defense, with(Items.copper, 100));
-            health = 850 * wallHealthMultiplier;
-            armor = 10f;
-            buildCostMultiplier = 5f;
-            size = 2;
         }};
     }
 }
