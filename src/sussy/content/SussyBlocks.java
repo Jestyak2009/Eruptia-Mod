@@ -47,14 +47,26 @@ public class SussyBlocks{
     SussyWall;
     
     public static void load(){
-        SussyWall = new Wall("SussyWall"){{
-            requirements(Category.crafting, ItemStack.with(
-                    Items.titanium, 60,
-                    Items.silicon, 150
-            ));
+        SussyWall = new ItemTurret("SussyWall"){{
+            requirements(Category.turret, with(Items.copper, 1));
+            ammo(
+                Items.copper,  new BasicBulletType(0.5f, 50){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }}
+            );
+
+            shootY = 3f;
+            reload = 20f;
+            range = 30;
+            shootCone = 15f;
             health = 5555;
-            armor = 3f;
-            buildCostMultiplier = 8f;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+
+            limitRange();
         }};
     }
 }
