@@ -59,12 +59,12 @@ public class SussyBlocks{
             );
 
             shootY = 3f;
-            reload = 20f;
+            reload = 1f;
             range = 30;
             shootCone = 15f;
             health = 5555;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
+            rotateSpeed = 50f;
 
             limitRange();
         }};
