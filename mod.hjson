@@ -1,8 +1,8 @@
-displayName: "Sussy"
-name: "sussy"
+displayName: "Eruptia Mod"
+name: "er"
 author: "Jestyak2009"
-main: "sussy.Sussy"
-description: "A java mod that I make on the phone."
-version: 1.0 sus
-minGameVersion: 140.4
+main: "er.Er"
+description: "A java mod that add's new planet Eruptia"
+version: 0.1
+minGameVersion: 145
 java: true
