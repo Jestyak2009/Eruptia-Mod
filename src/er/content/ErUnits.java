@@ -1,5 +1,6 @@
 package er.content;
 
+import arc.graphics.Color;
 import er.graphics.ErPal;
 import mindustry.ai.types.BuilderAI;
 import mindustry.entities.bullet.BulletType;
@@ -14,9 +15,9 @@ import static mindustry.Vars.tilesize;
 public class ErUnits {
     public static UnitType
 
-    coreUnit;
+    skyforge;
     public static void load(){
-        coreUnit = new UnitType("coreUnit") {{
+        skyforge = new UnitType("skyforge") {{
             constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, 500f);
@@ -42,11 +43,16 @@ public class ErUnits {
             pickupUnits = false;
             vulnerableWithPayloads = true;
 
+            engineColor = Color.white;
+
             outlineColor = ErPal.Outline;
 
             fogRadius = 0f;
             targetable = false;
             hittable = false;
+
+            trailLength = 7;
+            trailColor = Color.white;
             weapons.add(new RepairBeamWeapon() {{
                 reload = 10;
                 x = 0;
