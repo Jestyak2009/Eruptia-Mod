@@ -11,6 +11,7 @@ import mindustry.gen.Sounds;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.world.*;
+import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.environment.*;
@@ -36,6 +37,8 @@ public class ErBlocks{
             vanadiumDuct,
             //power
             vanadiumNode, solarRefractor,
+            //defense
+            chromiumWall, chromiumWallLarge,
             //craft
             sandConverter,
             //effect
@@ -215,6 +218,17 @@ public class ErBlocks{
                 particleRad = 12f;
                 particleLife = 50f;
             }});
+        }};
+        //defense
+        chromiumWall = new Wall("chromiumWall") {{
+            requirements(Category.defense, with(ErItems.chromium, 6));
+            size = 1;
+            health = 560;
+        }};
+        chromiumWallLarge = new Wall("chromiumWallLarge") {{
+            requirements(Category.defense, with(ErItems.chromium, 24));
+            size = 2;
+            health = 1120;
         }};
         //craft
         sandConverter = new GenericCrafter("sandConverter") {{
