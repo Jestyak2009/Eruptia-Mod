@@ -13,7 +13,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.distribution.Duct;
-import mindustry.world.blocks.environment.OreBlock;
+import mindustry.world.blocks.environment.*;
 import mindustry.world.blocks.power.BeamNode;
 import mindustry.world.blocks.power.SolarGenerator;
 import mindustry.world.blocks.production.BeamDrill;
@@ -27,7 +27,7 @@ import static mindustry.type.ItemStack.*;
 public class ErBlocks{
     public static Block
             //environment
-            vanadiumOre, chromiumOre,
+            crimsoniteFloor, crimsoniteWall, crimsoniteBoulder, ebonvineFloor, ebonvineWall, ebonvineBoulder, ebonvineCluster, vanadiumOre, chromiumOre,
             //turrets
             burst,
             //production
@@ -43,6 +43,33 @@ public class ErBlocks{
     
     public static void load(){
         //environment
+        crimsoniteFloor = new Floor("crimsoniteFloor") {{
+            variants = 3;
+            wall = crimsoniteWall;
+        }};
+        crimsoniteWall = new StaticWall("crimsoniteWall") {{
+            variants = 3;
+        }};
+        crimsoniteBoulder = new Prop("crimsoniteBoulder") {{
+            crimsoniteFloor.asFloor().decoration = this;
+            variants = 2;
+        }};
+        ebonvineFloor = new Floor("ebonvineFloor") {{
+            variants = 3;
+            wall = ebonvineWall;
+        }};
+        ebonvineWall = new StaticWall("ebonvineWall") {{
+            variants = 2;
+            itemDrop = ErItems.sand;
+        }};
+        ebonvineBoulder = new Prop("ebonvineBoulder") {{
+            ebonvineFloor.asFloor().decoration = this;
+            variants = 2;
+        }};
+        ebonvineCluster = new TallBlock("ebonvineCluster"){{
+            variants = 3;
+            clipSize = 128f;
+        }};
         vanadiumOre = new OreBlock("vanadiumOre", ErItems.vanadium) {{
             oreThreshold = 0.9f;
             oreScale = 25f;
@@ -193,7 +220,7 @@ public class ErBlocks{
         sandConverter = new GenericCrafter("sandConverter") {{
             requirements(Category.crafting, with(ErItems.vanadium, 85, ErItems.chromium, 50));
             size = 2;
-            consumeItems(with(Items.sand, 3, ErItems.vanadium, 1));
+            consumeItems(with(ErItems.sand, 3, ErItems.vanadium, 1));
             outputItem = new ItemStack(Items.silicon, 3);
             health = 120;
             hasPower = hasItems = true;

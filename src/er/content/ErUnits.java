@@ -29,7 +29,7 @@ public class ErUnits {
             mineHardnessScaling = false;
             flying = true;
             mineSpeed = 6f;
-            mineTier = 3;
+            mineTier = 1;
             buildSpeed = 1.2f;
             drag = 0.08f;
             speed = 4.5f;
